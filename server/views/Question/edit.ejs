@@ -1,0 +1,12 @@
+<%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
+
+<main class="home_page">
+  <h1 class="display-4"><%= title %></h1>
+  <form class="create-form" method="POST">
+    <label for="text">Question Text</label>
+    <textarea name="text" id="text"></textarea>
+    <input type="submit" />
+  </form>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %> <%- include ../partials/footer.ejs %>

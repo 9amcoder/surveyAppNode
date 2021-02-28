@@ -1,0 +1,32 @@
+<%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
+
+<main class="home_page">
+  <h1 class="display-4"><%= title %></h1>
+  <form class="create-form" method="POST">
+    <label for="name">Survey Title</label>
+    <br />
+    <input name="name" id="name" value="<%= survey.name %>" />
+    <br />
+    <label for="author">Survey Author</label>
+    <br />
+    <input name="author" id="author" value="<%= survey.author %>" />
+    <br />
+    <label for="subject">Subject of Survey</label>
+    <br />
+    <input name="subject" id="subject" value="<%= survey.subject %>" />
+    <br />
+    <% if(title == "Add Survey") { %>
+    <label for="number">Number of Questions</label>
+    <br />
+    <input name="number" id="number" type="number" value="<%= survey.questions %>" onkeyup="displayQuestionsField()"
+      onchange="displayQuestionsField()" />
+    <br />
+    <% } %>
+    <div id="questionsField">
+    </div>
+    <br />
+    <input type="submit" />
+  </form>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %> <%- include ../partials/footer.ejs %>

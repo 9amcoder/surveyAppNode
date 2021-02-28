@@ -1,0 +1,69 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<main class="main_element">
+    <div class="main_content">
+        <div class="d-flex justify-content-between mb-4">
+            <h1><%= title%></h1>
+            <% if(typeof displayName == 'string' && displayName) { %>
+            <a href="/crud/create" class="btn btn-secondary add-button"><i class="fas fa-plus-circle"></i> Create Survey</a>
+            <% } %>
+        </div>
+
+        <!-- business contact list table -->
+        <table class="table table-borderless" style="color:white;">
+            <!--Header Row-->
+            <thead>
+                <tr class="d-flex">
+                    <% if(typeof displayName == 'string' && displayName) { %>
+                    <th class="text-center col-2">Name</th>
+                    <th class="text-center col-2">Author Name</th>
+                    <th class="text-center col-4">Subject</th>
+                    <th class="text-center col-4"></th>
+                    <th class="text-center col-2"></th>
+                    <th class="text-center col-2"></th>
+                    <% } else{ %>
+                        <th class="text-center col-2">Name</th>
+                        <th class="text-center col-2">Author Name</th>
+                        <th class="text-center col-4">Subject</th>
+                        <th class="text-center col-4"></th>
+                    <% } %>
+                </tr>
+            </thead>
+
+            <!--Repeatable Row-->
+            <tbody>
+                <% for(let i=0 ; i<SurveyList.length ; i++) { %>
+                <tr class="d-flex">
+                    <% if(typeof displayName == 'string' && displayName) { %>
+                    <td class="text-center col-2"><%= SurveyList[i].name %></td>
+                    <td class="text-center col-2"><%= SurveyList[i].author %></td>
+                    <td class="text-center col-4"><%= SurveyList[i].subject %></td>
+                    <td class="text-center col-4">
+                        <a href="/crud/answers/list/<%= SurveyList[i]._id %>" class="surveylink">Display Answers</a>
+                    </td>
+                    <td class="text-center col-2">
+                        <a href="/crud/update/<%= SurveyList[i]._id %>" class="btn btn-success btn-sm">
+                            <i class="fas fa-pencil-alt"></i> Edit</a>
+                    </td>
+                    <td class="text-center col-2">
+                        <a href="/crud/delete/<%= SurveyList[i]._id %>" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i> Delete</a>
+                    </td>
+                    <% } else{ %>
+                        <td class="text-center col-2"><%= SurveyList[i].name %></td>
+                        <td class="text-center col-2"><%= SurveyList[i].author %></td>
+                        <td class="text-center col-4"><%= SurveyList[i].subject %></td>
+                        <td class="text-center col-4"><a href="/crud/list/<%= SurveyList[i]._id %>" class="surveylink">Give Suvery</a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>

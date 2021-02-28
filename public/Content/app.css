@@ -1,0 +1,108 @@
+
+/* fade in animation while loading the page contents */
+.main_element { 
+    animation: fadeInAnimation ease 2s; 
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+    } 
+} 
+
+/* background gradient for the whole website */
+body {
+    background: linear-gradient(to right,#0f2027, #203a43, #2c5364) !important;
+    color: white !important;
+    max-width: 500px;
+    margin: auto;
+}
+
+figure {
+    text-shadow: 3px 5px 2px #474747;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 1%;
+    margin: 2%;
+}
+
+.header_logo {
+    height: 110px;
+    width: 120px;
+    border-radius: 3%;
+}
+
+.site_name{
+    font-size: 20px;
+    color:#B8B8B8;
+}
+
+/* navigation bar always remains on the top of the page even while scrolling down due to sticly property */
+.navbar {
+    background: linear-gradient(to right,#0f2027, #203a43, #2c5364);
+    color: white;
+    position: sticky!important;
+    top: 0;
+    width: 100%;
+    padding: 5px 20px !important;
+    z-index: 1;
+}
+
+.nav-link {
+    color: white;
+}
+
+/* page contents */
+.container {
+    margin-left: 15;
+    margin-top: 75;
+}
+
+.title {
+    font-size: xx-large;
+}
+
+/* common link color for the website on hover and while active */
+a.nav-link:hover,
+li.active>a {
+    color: #f0860c;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+/* css for parent element using flex property */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* bussiness contact add and edit form page layout */
+.add-form, .edit-form {
+    padding: 40px;
+}
+
+.login-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.surveylink{
+    color:#78b6ec;
+}

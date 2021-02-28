@@ -1,0 +1,55 @@
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-inverse" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <img src="/Assets/Logo.jpg" width="80" height="80" alt="logo" class="rounded" />
+    </a>
+    <a class="navbar-brand" href="/"><i class="fa fa-bookmark-o"></i> 0% Risk Survery Page</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <% if(title == "Survey") { %>
+      <li class="nav-item active">
+        <a class="nav-link" href="/"><i class="fa fa-home fa-lg"></i> Home</a>
+      </li>
+      <% } else { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/"><i class="fa fa-home fa-lg"></i> Home</a>
+      </li>
+      <% } %> <% if(title == "Survey List") { %>
+      <li class="nav-item active">
+        <a class="nav-link" href="/crud/list"><i class="fa fa-book fa-lg"> </i> Survey List</a>
+      </li>
+      <% } else { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/crud/list"><i class="fa fa-list fa-lg"> </i> Survey List</a>
+      </li>
+      <% } %> <% if(typeof displayName == 'string' && displayName) { %>
+      <li class="navbar-text">
+        <i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %>
+      </li>
+      <li class="nav-item">
+        <a href="/logout" class="nav-link">
+          <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a>
+      </li>
+      <% } else { %>
+      <li class="nav-item">
+        <a href="/login" class="nav-link">
+          <i class="fas fa-lg fa-sign-in-alt"></i> Login</a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+  <!-- /.navbar-collapse -->
+</nav>
+</nav>

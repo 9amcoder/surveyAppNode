@@ -1,0 +1,26 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<main class="main_element">
+    <div class="main_content">
+        <div class="d-flex justify-content-between mb-4">
+            <h1><%= title%></h1>
+        </div>
+
+        <% for(let i=0 ; i<AnswersList.length ; i++) { %>
+            <div>
+                <h3><%= AnswersList[i]["question"] %></h3>
+                <ul>
+                    <% for(let j=0 ; j<AnswersList[i]["answers"].length ; j++) { %>
+                        <li><%= AnswersList[i]["answers"][j] %></li>
+                    <% } %>                
+                </ul>
+            </div>
+        <% } %>
+    </div>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>
